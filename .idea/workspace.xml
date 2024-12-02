@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80787438-6a58-4868-8451-f6f140abb3e8" name="Changes" comment="feat: project">
+    <list default="true" id="80787438-6a58-4868-8451-f6f140abb3e8" name="Changes" comment="feat: create file image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/carstore/dao/CarDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/carstore/dao/CarDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/carstore/filter/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/carstore/filter/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/carstore/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/carstore/model/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/carstore/servlet/CreateCarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/carstore/servlet/CreateCarServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/1733146555492-29ef7b28-cd55-4e6e-8556-49e0fad6d95b.avif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -38,7 +52,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1733087200" />
+                    <option name="lastUsedInstant" value="1733149431" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="unified-branch" />
@@ -82,7 +96,7 @@
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="br.com.carstore.filter" />
@@ -145,11 +159,31 @@
       <option name="project" value="LOCAL" />
       <updated>1732818803230</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: create file image">
+      <option name="closed" value="true" />
+      <created>1733146788956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733146788956</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: project" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: project" />
+    <MESSAGE value="feat: create file image" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create file image" />
   </component>
 </project>

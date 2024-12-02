@@ -10,7 +10,6 @@ public class Car {
     public Car(String id, String name) {
         this.id = id;
         this.name = name;
-
     }
 
     public Car(String id, String name, String image) {
@@ -19,10 +18,16 @@ public class Car {
         this.image = image;
     }
 
-    public String getName() { return name;  }
+    public String getName() {
+        return name;
+    }
 
-    public String getId() { return id; }
+    public String getId() {
+        return id;
+    }
 
-    public String getImage() { return image;}
+    public String getImage() {
+        return image;
+    }
 
 }

@@ -19,12 +19,14 @@ public class CarDao {
 
         try {
 
-            Connection connection = ConnectionPoolConfig.getConnection();
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+
+            System.out.println("success in database connection");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, car.getName());
-            preparedStatement.setString( 2, car.getImage());
+            preparedStatement.setString(2, car.getImage());
             preparedStatement.execute();
 
             System.out.println("success in insert car");
@@ -54,7 +56,7 @@ public class CarDao {
 
             List<Car> cars = new ArrayList<>();
 
-            while (resultSet.next()) {
+            while(resultSet.next()){
 
                 String carId = resultSet.getString("id");
                 String carName = resultSet.getString("name");
@@ -108,11 +110,9 @@ public class CarDao {
     }
 
     public void updateCar(Car car) {
-
         String SQL = "UPDATE CAR SET NAME = ?, IMAGE = ? WHERE ID = ?";
 
         try {
-
             Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
@@ -122,17 +122,14 @@ public class CarDao {
             preparedStatement.setString(3, car.getId());
             preparedStatement.execute();
 
-            System.out.println("success in update car");
+            System.out.println("Success in updating car");
 
             connection.close();
 
         } catch (Exception e) {
-
-            System.out.println("fail in database connection");
+            System.out.println("Fail in updating car");
             System.out.println("Error: " + e.getMessage());
-
         }
-
     }
 
 }

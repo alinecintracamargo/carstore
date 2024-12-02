@@ -25,9 +25,9 @@ public class CreateCarServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-        req.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding(("UTF-8"));
 
-        Map<String, String> parameters = uploadImage(req);
+       Map<String, String> parameters =  uploadImage(req);
 
         String carId = parameters.get("id");
         String carName = parameters.get("car-name");
@@ -36,22 +36,21 @@ public class CreateCarServlet extends HttpServlet {
         CarDao carDao = new CarDao();
         Car car = new Car(carId, carName, image);
 
-        if (carId == null || carId.isBlank()) {
-            // Criação
+        if (carId.isBlank()) {
+
             carDao.createCar(car);
+
         } else {
-            // Atualização
+
             carDao.updateCar(car);
         }
 
-
         resp.sendRedirect("/find-all-cars");
-
     }
 
     private Map<String, String> uploadImage(HttpServletRequest httpServletRequest) {
 
-        Map<String, String> requestParameters = new HashMap<>();
+        HashMap<String, String> parameters = new HashMap<>();
 
         if (isMultipartContent(httpServletRequest)) {
 
@@ -61,34 +60,34 @@ public class CreateCarServlet extends HttpServlet {
 
                 List<FileItem> fileItems = new ServletFileUpload(diskFileItemFactory).parseRequest(httpServletRequest);
 
-                for (FileItem fileItem : fileItems) {
+                for (FileItem item : fileItems) {
 
-                    checkFieldType(fileItem, requestParameters);
-
+                    checkFieldType(item, parameters);
                 }
 
             } catch (Exception ex) {
 
-                requestParameters.put("image", "img/default-car.jpg");
-
+                parameters.put("image", "img/default-car.jpg");
             }
 
+            return parameters;
         }
+        return parameters;
 
-        return requestParameters;
 
     }
 
-    private void checkFieldType(FileItem item, Map requestParameters) throws Exception {
+    private void checkFieldType(FileItem fileItem, Map requestParameters) throws Exception {
 
-        if (item.isFormField()) {
+        if (fileItem.isFormField()) {
 
-            requestParameters.put(item.getFieldName(), item.getString());
+            requestParameters.put(fileItem.getFieldName(), fileItem.getString());
 
         } else {
 
-            String fileName = processUploadedFile(item);
-            requestParameters.put("image", "img/".concat(fileName));
+            String fileName = processUploadedFile(fileItem);
+
+            requestParameters.put("image", fileName);
 
         }
 
@@ -97,6 +96,7 @@ public class CreateCarServlet extends HttpServlet {
     private String processUploadedFile(FileItem fileItem) throws Exception {
 
         Long currentTime = new Date().getTime();
+
         String fileName = currentTime.toString().concat("-").concat(fileItem.getName().replace(" ", ""));
         String filePath = this.getServletContext().getRealPath("img").concat(File.separator).concat(fileName);
 
