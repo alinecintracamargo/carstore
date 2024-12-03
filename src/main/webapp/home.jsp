@@ -64,9 +64,13 @@
                     <c:forEach var="car" items="${cars}">
                         <div class="col">
                             <div class="card shadow-sm">
-                                <img src="${pageContext.request.contextPath}/img/${car.image}" alt="image de um carro">
+                               <img src="${pageContext.request.contextPath}/img/${car.image}" class="card-img-top" alt="${car.image}">
                                 <div class="card-body">
-                                    <p class="card-text">${car.name}</p>
+                                    <p class="card-text"><strong>Name:</strong> ${car.name}</p>
+                                    <p class="card-text"><strong>Brand:</strong> ${car.brand}</p>
+                                    <p class="card-text"><strong>Price:</strong> ${car.price}</p>
+                                    <p class="card-text"><strong>Year:</strong> ${car.year}</p>
+                                    <p class="card-text"><strong>Year Model:</strong> ${car.yearModel}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-sm btn-outline-secondary">View</button>

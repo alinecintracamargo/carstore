@@ -18,6 +18,8 @@ public class AuthenticationFilter implements Filter {
 
         if (isUserLoggedOn(httpServletRequest)) {
 
+            servletRequest.setAttribute("hasmessage", true);
+
             servletRequest.setAttribute("message", "User not authenticated!");
 
             servletRequest.getRequestDispatcher("/login.jsp").forward(httpServletRequest, servletResponse);

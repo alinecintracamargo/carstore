@@ -79,8 +79,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label" for="version">Version</label>
-                        <input class="form-control" type="text" name="version" id="version">
+                        <label class="form-label" for="price">Price </label>
+                        <input class="form-control" type="text" name="price" id="price">
                     </div>
 
 

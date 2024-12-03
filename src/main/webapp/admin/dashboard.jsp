@@ -84,7 +84,7 @@
                                     <input type="hidden" id="id" name="id" value="${car.id}">
                                     <button type="submit" class="btn btn-primary">Delete</button>
 
-                                    <a class="btn btn-secondary" href="index.jsp?id=${car.id}&name=${car.name}">Update</a>
+                                    <a class="btn btn-secondary" href="index.jsp?id=${car.id}&name=${car.name}&brand=${car.brand}&price=${car.price}&yearModel=${car.yearModel}&image=${car.image}">Update</a>
                                 </form>
                             </td>
                         </c:if>

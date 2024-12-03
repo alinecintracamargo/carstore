@@ -31,10 +31,15 @@ public class CreateCarServlet extends HttpServlet {
 
         String carId = parameters.get("id");
         String carName = parameters.get("car-name");
-        String image =  parameters.get("image");
+        String brand = parameters.get("brand");
+        String price = parameters.get("price");
+        String year = parameters.get("year");
+        String yearModel = parameters.get("year-model");
+        String image = parameters.get("image");
+
 
         CarDao carDao = new CarDao();
-        Car car = new Car(carId, carName, image);
+        Car car = new Car(carId, carName, brand, price, year, yearModel, image);
 
         if (carId.isBlank()) {
 
@@ -100,9 +105,12 @@ public class CreateCarServlet extends HttpServlet {
         String fileName = currentTime.toString().concat("-").concat(fileItem.getName().replace(" ", ""));
         String filePath = this.getServletContext().getRealPath("img").concat(File.separator).concat(fileName);
 
+
         fileItem.write(new File(filePath));
 
         return fileName;
+
     }
+
 
 }

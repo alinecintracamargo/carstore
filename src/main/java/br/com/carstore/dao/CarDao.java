@@ -15,7 +15,7 @@ public class CarDao {
 
     public void createCar(Car car) {
 
-        String SQL = "INSERT INTO CAR (NAME, IMAGE) VALUES (?, ?)";
+        String SQL = "INSERT INTO CAR (NAME, BRAND, PRICE, YEAR_, YEAR_MODEL, IMAGE) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
 
@@ -26,7 +26,11 @@ public class CarDao {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, car.getName());
-            preparedStatement.setString(2, car.getImage());
+            preparedStatement.setString(2, car.getBrand());
+            preparedStatement.setString(3, car.getPrice());
+            preparedStatement.setString(4, car.getYear());
+            preparedStatement.setString(5, car.getYearModel());
+            preparedStatement.setString(6, car.getImage());
             preparedStatement.execute();
 
             System.out.println("success in insert car");
@@ -56,16 +60,17 @@ public class CarDao {
 
             List<Car> cars = new ArrayList<>();
 
-            while(resultSet.next()){
+            while (resultSet.next()) {
+                String carId = resultSet.getString("ID");
+                String carName = resultSet.getString("NAME");
+                String brand = resultSet.getString("BRAND");
+                String price = resultSet.getString("PRICE");
+                String year = resultSet.getString("YEAR_");
+                String yearModel = resultSet.getString("YEAR_MODEL");
+                String image = resultSet.getString("IMAGE");
 
-                String carId = resultSet.getString("id");
-                String carName = resultSet.getString("name");
-                String image = resultSet.getString("image");
-
-                Car car = new Car(carId, carName, image);
-
+                Car car = new Car(carId, carName, brand, price, year, yearModel, image);
                 cars.add(car);
-
             }
 
             System.out.println("success in select * car");
@@ -110,7 +115,7 @@ public class CarDao {
     }
 
     public void updateCar(Car car) {
-        String SQL = "UPDATE CAR SET NAME = ?, IMAGE = ? WHERE ID = ?";
+        String SQL = "UPDATE CAR SET NAME = ?, BRAND = ?, PRICE = ?, YEAR_ = ?, YEAR_MODEL = ?, IMAGE = ? WHERE ID = ?";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
@@ -118,8 +123,12 @@ public class CarDao {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, car.getName());
-            preparedStatement.setString(2, car.getImage());
-            preparedStatement.setString(3, car.getId());
+            preparedStatement.setString(2, car.getBrand());
+            preparedStatement.setString(3, car.getPrice());
+            preparedStatement.setString(4, car.getYear());
+            preparedStatement.setString(5, car.getYearModel());
+            preparedStatement.setString(6, car.getImage());
+            preparedStatement.setString(7, car.getId());
             preparedStatement.execute();
 
             System.out.println("Success in updating car");
