@@ -41,18 +41,16 @@
 
                         </a>
                     </li>
-                </ul>
-
-                <hr>
-
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/admin/find-all-cars"><span data-feather="home" class="align-text-bottom"></span> Home </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin/"><span data-feather="file-text" class="align-text-bottom"></span> New Car</a>
-                    </li>
-                </ul>
+</ul>
+<hr>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/admin/find-all-cars"><span data-feather="home" class="align-text-bottom"></span> Home </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/"><span data-feather="file-text" class="align-text-bottom"></span> New Car</a>
+        </li>
+    </ul>
 
             </div>
 

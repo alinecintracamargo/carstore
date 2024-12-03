@@ -27,7 +27,7 @@ public class ListCarServlet extends HttpServlet {
 
         }else {
 
-            req.getRequestDispatcher("home.jsp").forward(req, resp);
+            req.getRequestDispatcher("/home.jsp").forward(req, resp);
         }
 
     }

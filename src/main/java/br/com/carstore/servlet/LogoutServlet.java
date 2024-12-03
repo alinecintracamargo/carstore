@@ -17,6 +17,6 @@ public class LogoutServlet extends HttpServlet {
 
         req.setAttribute("messege", "Success on logout");
 
-        req.getRequestDispatcher("login.jsp").forward(req, resp);
+        req.getRequestDispatcher("/login.jsp").forward(req, resp);
     }
 }

@@ -45,7 +45,7 @@ public class CreateCarServlet extends HttpServlet {
             carDao.updateCar(car);
         }
 
-        resp.sendRedirect("/find-all-cars");
+        resp.sendRedirect("/admin/find-all-cars");
     }
 
     private Map<String, String> uploadImage(HttpServletRequest httpServletRequest) {
