@@ -64,7 +64,7 @@
                     <c:forEach var="car" items="${cars}">
                         <div class="col">
                             <div class="card shadow-sm">
-                                <img src="${car.image}" alt="image de um carro">
+                                <img src="${pageContext.request.contextPath}/img/${car.image}" alt="image de um carro">
                                 <div class="card-body">
                                     <p class="card-text">${car.name}</p>
                                     <div class="d-flex justify-content-between align-items-center">
